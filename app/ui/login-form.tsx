@@ -15,10 +15,10 @@ import { useSearchParams } from 'next/navigation'
 export default function LoginForm() {
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/dashboard'
-  const [errorMessage, formAction, isPending] = useActionState(
-    authenticate,
-    undefined
-  )
+  const [errorMessage, formAction, isPending] = useActionState<
+    string | undefined,
+    FormData
+  >(authenticate, undefined)
 
   return (
     <form action={formAction} className="space-y-3">
