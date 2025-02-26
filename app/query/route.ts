@@ -13,12 +13,12 @@ async function listInvoices() {
   return data
 }
 
-async function dropTable(tableName: string) {
-  const data = await sql`
-    DROP TABLE IF EXISTS ${tableName};
-  `
-  return data
-}
+// async function dropTable(tableName: string) {
+//   const data = await sql`
+//     DROP TABLE IF EXISTS ${tableName};
+//   `
+//   return data
+// }
 
 export async function GET() {
   try {
